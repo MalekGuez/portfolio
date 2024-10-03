@@ -1,0 +1,11 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap'); */
+
+.main {
+  height: 100vh;
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo {
+    filter: invert();
+  }
+}
