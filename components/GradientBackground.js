@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import styles from "../app/styles/GradientBackground.module.css";
 
-const GradientBackground = () => {
+export default function GradientBackground() {
     const interactive = useRef(null);
 
     useEffect(() => {
@@ -50,5 +50,3 @@ const GradientBackground = () => {
         </div>
     );
 };
-
-export default GradientBackground;

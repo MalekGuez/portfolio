@@ -1,3 +1,9 @@
 .link {
-    
+    text-transform: lowercase;
+    font-weight: 900;
+    font-size: 100px;
+}
+
+.link span {
+    font-size: 32px;
 }

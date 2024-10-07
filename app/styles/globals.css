@@ -45,6 +45,28 @@ a {
   text-decoration: none;
 }
 
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 200px;
+  height: 60px;
+  border-radius: 8px;
+
+  font-size: 18px;
+}
+
+.btn-primary {
+  background: #3500AD;
+  color: white;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid white;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

@@ -5,34 +5,56 @@ import { topLeft, topCenter, topRight, middleLeft, middleRight, bottomLeft, bott
 import styles from "@/components/nav/style.module.css";
 import NavItems from "./navItems";
 
-const index = () => {
+export default function index() {
     const [isHover, setIsHover] = useState(false);
     const [isActive, setIsActive] = useState(false);
 
     return (
-        <>
-            <svg xmlns="http://www.w3.org/2000/svg"
+        <div className={styles.menuContainer}>
+            <motion.svg xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 60 60"
                 onMouseEnter={() => setIsHover(true)} 
                 onMouseLeave={() => setIsHover(false)}
                 onClick={() => setIsActive(!isActive)}
                 className={styles.menu}
+                initial={false}
+                animate={{
+                    rotate: isActive ? [0, 55, 45] : 0,
+                    scale: isActive ? "1.2" : "1"
+                }}
+                transition={{ duration: .55, ease: [.25, 0, .24, 1]}}
             >
-                <path d={topLeft}/>
+                <motion.path 
+                    d={topLeft} 
+                    initial={false} 
+                    animate={{
+                        x: isActive ? "-25px" : "0px",
+                        y: isActive ? "-25px" : "0px"
+                    }}
+                    transition={{ duration: 0.25, ease: "easeOut"}}
+                />
                 <motion.path 
                     d={topCenter}
                     initial={false}
                     animate={{
-                        y: isHover ? "-25px" : "0px" 
+                        y: isHover ? "-25px" : isActive ? "-25px" : "0px" 
                     }} 
                     transition={{ duration: 0.25, ease: "easeOut"}}
                 />
-                <path d={topRight}/>
+                <motion.path 
+                    d={topRight}
+                    initial={false} 
+                    animate={{
+                        x: isActive ? "25px" : "0px",
+                        y: isActive ? "-25px" : "0px"
+                    }}
+                    transition={{ duration: 0.25, ease: "easeOut"}}
+                />
                 <motion.path 
                     d={middleLeft}
                     initial={false}
                     animate={{
-                        x: isHover ? "-25px" : "0px" 
+                        x: isHover ? "-25px" : isActive ? "-25px" : "0px" 
                     }} 
                     transition={{ duration: 0.25, ease: "easeOut" }}
                 />
@@ -40,43 +62,57 @@ const index = () => {
                     d={middleRight}
                     initial={false}
                     animate={{
-                        x: isHover ? "25px" : "0px" 
+                        x: isHover ? "25px" : isActive ? "25px" : "0px" 
                     }} 
                     transition={{ duration: 0.25, ease: "easeOut" }}
                 />
-                <path d={bottomLeft}/>
+                <motion.path 
+                    d={bottomLeft}
+                    initial={false} 
+                    animate={{
+                        x: isActive ? "-25px" : "0px",
+                        y: isActive ? "25px" : "0px"
+                    }}
+                    transition={{ duration: 0.25, ease: "easeOut"}}
+                />
                 <motion.path 
                     d={bottomCenter}
                     initial={false}
                     animate={{
-                        y: isHover ? "25px" : "0px" 
+                        y: isHover ? "25px" : isActive ? "25px" : "0px" 
                     }} 
                     transition={{ duration: 0.25, ease: "easeOut" }}
                 />
-                <path d={bottomRight}/>
-                <motion.rect x="25.8" y="25.8" width="8.62" height="8.62" fill="none" stroke="white" strokeWidth="2" 
+                <motion.path 
+                    d={bottomRight}
+                    initial={false} 
+                    animate={{
+                        x: isActive ? "25px" : "0px",
+                        y: isActive ? "25px" : "0px"
+                    }}
+                transition={{ duration: 0.25, ease: "easeOut"}}
+                />
+                <motion.rect x="25.7" y="25.7" width="8.62" height="8.62" fill="none" stroke="white" strokeWidth="2" 
                     initial={false}
                     animate={{ 
-                        y: isHover ? '-17px' : '0px',
-                        height: isHover ? '42.31px' : '8.62px'
+                        y: isHover ? '-17px': isActive ? "-17px" :  '0px',
+                        height: isHover ? '42.31px' : isActive ? "42.31px" : '8.62px'
                     }}
                     transition={{ duration: 0.25, ease: 'easeOut' }}
                 />
-                <motion.rect x="25.8" y="25.8" width="8.62" height="8.62" fill="none" stroke="white" strokeWidth="2" 
+                <motion.rect x="25.7" y="25.7" width="8.62" height="8.62" fill="none" stroke="white" strokeWidth="2" 
                     initial={false}
                     animate={{ 
-                        x: isHover ? '-17px' : '0px',
-                        width: isHover ? '42.31px' : '8.62px'
+                        x: isHover ? '-17px' : isActive ? "-17px" : '0px',
+                        width: isHover ? '42.31px' : isActive ? "42.31px" : '8.62px'
                     }}
                     transition={{ duration: 0.25, ease: 'easeOut' }}
                 />
-            </svg>
+            </motion.svg>
 
             <AnimatePresence mode="wait">
                 {isActive && <NavItems />}
             </AnimatePresence>
-        </>
+        </div>
     );
 }
-
-export default index;

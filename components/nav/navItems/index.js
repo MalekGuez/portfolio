@@ -6,15 +6,15 @@ import styles from "../style.module.css";
 
 const slide = {
     initial: {
-        x: "0%"
+        y: "-100%"
     },
     enter: {
-        x: "-100%",
-        transition: { duration: 0.5, ease: "easeIn"}
+        y: "0%",
+        transition: { duration: 0.8, ease: [.76, 0, .24, 1]}
     },
     exit: {
-        x: "0%",
-        transition: { duration: 0.5, ease: "easeIn"}
+        y: "-100%",
+        transition: { duration: 0.8, ease: [.76, 0, .24, 1]}
     }
 }
 
@@ -30,10 +30,14 @@ const items = [
     {
         title: "About me",
         href: "/about-me"
+    },
+    {
+        title: "Contact",
+        href: "mailto:malekguezouli@gmail.com"
     }
 ];
 
-const index = () => {
+export default function index() {
     return (
         <motion.div
             className={styles.navItems}
@@ -48,5 +52,3 @@ const index = () => {
         </motion.div>
     );
 }
-
-export default index;
