@@ -1,13 +1,11 @@
-"use client"
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { topLeft, topCenter, topRight, middleLeft, middleRight, bottomLeft, bottomCenter, bottomRight } from "./paths";
 import styles from "@/components/nav/style.module.css";
 import NavItems from "./navItems";
 
-export default function index() {
+export default function index({isActive, setIsActive}) {
     const [isHover, setIsHover] = useState(false);
-    const [isActive, setIsActive] = useState(false);
 
     return (
         <div className={styles.menuContainer}>

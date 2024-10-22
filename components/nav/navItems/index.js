@@ -14,7 +14,7 @@ const slide = {
     },
     exit: {
         y: "-100%",
-        transition: { duration: 0.8, ease: [.76, 0, .24, 1]}
+        transition: { duration: 0.8, ease: [.76, 0, .24, .5]}
     }
 }
 

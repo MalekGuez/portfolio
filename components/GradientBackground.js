@@ -1,9 +1,41 @@
 "use client"
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState} from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import styles from "../app/styles/GradientBackground.module.css";
 
-export default function GradientBackground() {
+export default function GradientBackground({isActive}) {
     const interactive = useRef(null);
+
+    const [positions, setPositions] = useState([]);
+    const targetPositionsRef = useRef([]);
+
+    const [initialAnimationComplete, setInitialAnimationComplete] = useState(false);
+
+    const generateRandomPosition = () => ({
+      x: Math.random() * 100 - 50,
+      y: Math.random() * 100 - 50,
+    });
+  
+    useEffect(() => {
+      const initialPositions = Array.from({ length: 5 }, generateRandomPosition);
+      setPositions(initialPositions);
+      targetPositionsRef.current = initialPositions;
+  
+      const intervalId = setInterval(() => {
+        if (!initialAnimationComplete || isActive) return;
+        const newPositions = targetPositionsRef.current.map(generateRandomPosition);
+        setPositions(newPositions);
+        targetPositionsRef.current = newPositions;
+      }, 5900);
+  
+      return () => clearInterval(intervalId);
+    }, [isActive, initialAnimationComplete]);
+
+    useEffect(() => {
+        if (isActive) {
+          setInitialAnimationComplete(false);
+        }
+      }, [isActive]);
 
     useEffect(() => {
         if(interactive.current) {
@@ -40,12 +72,50 @@ export default function GradientBackground() {
                 </filter>
             </svg>
             <div className={styles.gradients}>
-                <div className={styles.g1}></div>
-                <div className={styles.g2}></div>
-                <div className={styles.g3}></div>
-                <div className={styles.g4}></div>
-                <div className={styles.g5}></div>
-                <div className={styles.interactive} ref={interactive}></div>
+                <AnimatePresence mode="wait">
+                    {!isActive && positions.map((pos, index) => (
+                            <motion.div
+                            key={index}
+                            className={styles[`g${index + 1}`]}
+                            initial={{
+                              x: `${pos.x > 0 ? 100 : -100}%`,
+                              y: `${pos.y > 0 ? 100 : -100}%`,
+                              opacity: 0,
+                              scale: 0.5,
+                              transition: {
+                                duration: 1,
+                                ease: "easeInOut"
+                              }
+                            }}
+                            animate={{
+                              x: `${pos.x}%`,
+                              y: `${pos.y}%`,
+                              opacity: 1,
+                              scale: 1,
+                              transition: {
+                                duration: initialAnimationComplete ? 6 : 1,
+                                ease: "easeInOut",
+                              },
+                            }}
+                            onAnimationComplete={() => {
+                              if (!initialAnimationComplete) {
+                                setInitialAnimationComplete(true);
+                              }
+                            }}
+                            exit={{
+                                x: `${pos.x > 0 ? 125 : -125}%`,  
+                                y: `${pos.y > 0 ? 125 : -125}%`,
+                                opacity: 0,
+                                scale: 0.5,
+                                transition: {
+                                  duration: 1,  
+                                  ease: "easeInOut",
+                                },
+                            }} 
+                          />
+                        ))}
+                </AnimatePresence>
+                <motion.div className={styles.interactive} ref={interactive} initial={false} animate={{ opacity : isActive ? 0 : .7, transition: { duration: .4, ease: "easeInOut"}}}/>
             </div>
         </div>
     );

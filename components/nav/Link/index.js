@@ -17,15 +17,15 @@ const slide = {
         transition: { 
             duration: .8, 
             ease: [.76, 0, .24, 1], 
-            delay: .05 * i,
+            delay: (.05 * i),
             skewY: {
                 delay: .45, 
                 duration: .5
             },
             opacity: {
-                duration: 1.5,
-                delay: .10 * i
-            }
+                duration: .5,
+                delay: (.10 * i)
+            },
         }
     }),
     exit: (i) => ({
@@ -39,7 +39,7 @@ const slide = {
             skewY: {
                 delay: .25,
                 duration: .5
-            }
+            },
         }
     })
 }
