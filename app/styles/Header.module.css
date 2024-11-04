@@ -3,11 +3,49 @@
     justify-content: space-between;
     align-items: center;
 
-    padding: 100px 100px 0 100px;
+    padding: 80px 100px 0 100px;
     position: relative;
     z-index: 999;
 }
 
+.headerContainer {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    height: 95px;
+}
+
 .logo {
+    cursor: pointer;
+}
+
+.headerLogo {
+    display: flex;
+    gap: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.logoText {
+    font-weight: 900;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+}
+
+.headerLang {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+}
+
+.headerTheme {
+    border-radius: 500px;
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
     cursor: pointer;
 }

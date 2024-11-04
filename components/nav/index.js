@@ -3,8 +3,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import { topLeft, topCenter, topRight, middleLeft, middleRight, bottomLeft, bottomCenter, bottomRight } from "./paths";
 import styles from "@/components/nav/style.module.css";
 import NavItems from "./navItems";
+import { useMenuContext } from "@/app/context/MenuContext";
 
 export default function index({isActive, setIsActive}) {
+    const { isLoading } = useMenuContext();
     const [isHover, setIsHover] = useState(false);
 
     return (
@@ -15,10 +17,17 @@ export default function index({isActive, setIsActive}) {
                 onMouseLeave={() => setIsHover(false)}
                 onClick={() => setIsActive(!isActive)}
                 className={styles.menu}
-                initial={false}
+                initial={{ y: "-200%" }}
                 animate={{
                     rotate: isActive ? [0, 55, 45] : 0,
-                    scale: isActive ? "1.2" : "1"
+                    scale: isActive ? "1.2" : "1",
+                    y: !isLoading && "0%",
+                    transition: {
+                        y: {
+                            delay: 1, 
+                            duration: .35
+                        }
+                    }
                 }}
                 transition={{ duration: .55, ease: [.25, 0, .24, 1]}}
             >

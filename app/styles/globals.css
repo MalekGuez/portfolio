@@ -28,7 +28,21 @@ body {
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: linear-gradient(
+    to left top,
+    #0e002c,
+    #0d0029,
+    #0c0025,
+    #0a0022,
+    #08001e,
+    #07001b,
+    #060018,
+    #050015,
+    #040012,
+    #04000e,
+    #03010a,
+    #020105
+  );
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
