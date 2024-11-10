@@ -17,12 +17,12 @@ export default function Home() {
               initial={{
                 opacity: 0,
                 y: "200%",
-                skewY: "5deg",
+                skewY: "-5deg",
               }}
               animate={{
                 opacity: isActive ? 0 : 1,
                 y: isActive ? "200%" : ["200%", "-15%", "0%"],
-                skewY: isActive ? ["0deg", "-5deg", "0deg"] : ["5deg", "0deg"],
+                skewY: isActive ? ["0deg", "5deg", "0deg"] : ["-5deg", "0deg"],
                 transition: {
                   duration: 0.8,
                   delay: isActive ? 0 : (loadCount === 0) ? 1.4 : 0.4,

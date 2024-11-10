@@ -1,0 +1,27 @@
+.works {
+    padding-top: 16px;
+    padding-bottom: 160px;
+    overflow-y: scroll; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    scrollbar-width: none;
+}
+
+.works::-webkit-scrollbar {
+    display: none;
+}
+
+.worksTitle {
+    margin-top: 40px;
+    font-size: 88px;
+    line-height: 88px;
+    text-transform: uppercase;
+    font-family: "Heatrix", sans-serif;
+    text-align: right;
+    
+    padding-bottom: 16px;
+
+    border-bottom: 3px solid #3500AD;
+}

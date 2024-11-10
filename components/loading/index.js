@@ -18,7 +18,7 @@ export default function Loading() {
     } else {
       const timer = setTimeout(() => {
         setIsLoading(false);
-      }, 500);
+      }, 250);
 
       return () => clearTimeout(timer);
     }
@@ -26,6 +26,7 @@ export default function Loading() {
 
   const handleLoadComplete = () => {
     loadCount === 0 && setLoadCount(1);
+    console.log(loadCount)
   };
 
   return (

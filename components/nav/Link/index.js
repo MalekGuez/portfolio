@@ -6,7 +6,7 @@ import Link from "next/link";
 import styles from './style.module.css';
 
 export default function index({data}) {
-    const { setIsLoading, setIsActive, delayLoadingBar } = useMenuContext();
+    const { setIsLoading, setIsActive, delayLoadingBar, setBgVisible} = useMenuContext();
 
     const nbLink = 4;
 

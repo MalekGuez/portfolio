@@ -1,13 +1,25 @@
 "use client";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { useMenuContext } from "@/app/context/MenuContext";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import styles from "@/app/styles/Header.module.css";
-import Image from "next/image";
 import Nav from "./nav";
 import GradientBackground from "./GradientBackground";
 
 export default function Header() {
-  const { isLoading, loadCount, isActive, setIsActive } = useMenuContext();
+  const { isLoading, isActive, setBgVisible, setBgMoveCount, bgMoveCount} = useMenuContext();
+
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (pathname !== '/') {
+      setBgVisible(false);
+      bgMoveCount === 0 && setBgMoveCount((m) => m+1);
+    } else {
+      setBgVisible(true);
+    }
+  }, [pathname, setBgVisible, setBgMoveCount]);
 
   return (
     <>
@@ -72,10 +84,10 @@ export default function Header() {
               },
             }}
           />
-          <Nav isActive={isActive} setIsActive={setIsActive} />
+          <Nav />
         </div>
       </div>
-      <GradientBackground isActive={isActive} />
+      <GradientBackground />
     </>
   );
 }

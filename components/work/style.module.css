@@ -1,0 +1,38 @@
+.work {
+    width: 100%;
+    border-bottom: 3px solid #3500AD;
+    padding: 16px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    cursor: pointer;
+    transition: .2s all linear;
+}
+
+.work:hover .title, .work:hover .theme  {
+    transform: translateX(-15px);
+    opacity: .5;
+} 
+
+.work:first-child {
+    padding-top: 0;
+}
+
+.title {
+    font-weight: 900;
+    font-size: 78px;
+    line-height: 78px;
+    font-family: "Inter", sans-serif;
+    text-transform: lowercase;
+    margin-bottom: 12px;
+    transition: .2s all linear;
+}
+
+.theme {
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    font-size: 22px;
+    line-height: 22px;
+    transition: .2s all linear;
+}

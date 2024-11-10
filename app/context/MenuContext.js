@@ -9,8 +9,11 @@ export const MenuProvider = ({ children }) => {
 
     const [delayLoadingBar, setDelayLoadingBar] = useState(true);
 
+    const [bgVisible, setBgVisible] = useState(true);
+    const [bgMoveCount, setBgMoveCount] = useState(0);
+
     return (
-        <MenuContext.Provider value={{ isActive, setIsActive, isLoading, setIsLoading, loadCount, setLoadCount, delayLoadingBar, setDelayLoadingBar}}>
+        <MenuContext.Provider value={{ bgMoveCount, setBgMoveCount, bgVisible, setBgVisible, isActive, setIsActive, isLoading, setIsLoading, loadCount, setLoadCount, delayLoadingBar, setDelayLoadingBar}}>
             {children}
         </MenuContext.Provider>
     );
