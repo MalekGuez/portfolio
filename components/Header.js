@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useMenuContext } from "@/app/context/MenuContext";
 import { motion } from "framer-motion";
 import styles from "@/app/styles/Header.module.css";
@@ -8,14 +8,15 @@ import Nav from "./nav";
 import GradientBackground from "./GradientBackground";
 
 export default function Header() {
-  const { isLoading, isActive, setBgVisible, setBgMoveCount, bgMoveCount} = useMenuContext();
-
+  const { isLoading, isActive, setBgVisible, setBgMoveCount, bgMoveCount, setIsLoading, setIsActive } =
+    useMenuContext();
+  const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
-    if (pathname !== '/') {
+    if (pathname !== "/") {
       setBgVisible(false);
-      bgMoveCount === 0 && setBgMoveCount((m) => m+1);
+      bgMoveCount === 0 && setBgMoveCount((m) => m + 1);
     } else {
       setBgVisible(true);
     }
@@ -27,7 +28,7 @@ export default function Header() {
         <div className={styles.headerLogo}>
           <motion.img
             className={styles.logo}
-            src="static/images/Logo-white.svg"
+            src="/static/images/Logo-white.svg"
             alt="MG"
             width="52"
             height="30"
@@ -39,6 +40,11 @@ export default function Header() {
                 delay: 1,
                 ease: "easeInOut",
               },
+            }}
+            onClick={() => {
+              pathname !== "/" && router.push("/");
+              setIsLoading(true);
+              setIsActive(false);
             }}
           />
           <motion.div

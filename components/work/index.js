@@ -1,14 +1,19 @@
 import styles from "./style.module.css";
+
 import { AnimatePresence, motion } from "framer-motion";
 
 import { useMenuContext } from "@/app/context/MenuContext";
+import { useRouter } from "next/navigation";
 
-export default function index({ index, title, theme, setModal }) {
+export default function index({ index, title, theme, setModal, link }) {
+  const router = useRouter();
   const { isActive, isLoading, setIsLoading, loadCount } = useMenuContext();
 
   const handleWorkClick = () => {
+    router.push(`/works/${link}`);
     setIsLoading(true);
     setModal({active: false, index});
+
   };
 
   return (

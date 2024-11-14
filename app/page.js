@@ -29,6 +29,15 @@ export default function Home() {
                   ease: "easeInOut",
                 },
               }}
+              exit={{
+                opacity: 0,
+                y: "200%",
+                skewY: "-5deg",
+                transition: {
+                  duration: .4,
+                  ease: "easeInOut"
+                }
+              }}
             >
               <h1>
                 <span className={styles.titleStroke}>Hey, I'm</span> Malek.

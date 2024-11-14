@@ -54,6 +54,7 @@ export default function Works() {
               title={work.title}
               theme={work.date + " / " + work.theme}
               setModal={setModal}
+              link={work.link}
             />
           );
         })}

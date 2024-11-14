@@ -26,7 +26,6 @@ export default function Loading() {
 
   const handleLoadComplete = () => {
     loadCount === 0 && setLoadCount(1);
-    console.log(loadCount)
   };
 
   return (

@@ -1,0 +1,84 @@
+.workContainer {
+  overflow-y: scroll;
+  padding: 200px 100px 0 100px;
+  height: 100vh;
+
+  scrollbar-width: none;
+}
+
+.workContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.workDescription {
+  position: relative;
+  margin-bottom: 56px;
+  transition: 0.5s ease all;
+
+  .descriptionTitle {
+    margin-bottom: 24px;
+    font-weight: 900;
+    font-size: 78px;
+    line-height: 78px;
+    font-family: "Inter", sans-serif;
+    text-transform: uppercase;
+  }
+
+  .description {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 32px;
+    font-family: "Inter", sans-serif;
+    white-space: pre-line;
+  }
+}
+
+.workDetail {
+  display: flex;
+  gap: 56px;
+  height: fit-content;
+  padding-bottom: 40px;
+
+  .detailImages {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    gap: 32px;
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .detailSpecs {
+    width: 25%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 0 16px;
+  }
+
+  .specs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .specsTitle {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    font-family: "Inter", sans-serif;
+    text-transform: uppercase;
+  }
+
+  .specsDesc {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    font-family: "Inter", sans-serif;
+  }
+}

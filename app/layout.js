@@ -14,7 +14,7 @@ export const metadata = {
   title: "Malek Guezouli Portfolio",
   description: "Malek Guezouli, Full Stack Developer based in France",
   icons: {
-    icon: "static/favicon.ico",
+    icon: "/static/favicon.ico",
   },
 };
 
