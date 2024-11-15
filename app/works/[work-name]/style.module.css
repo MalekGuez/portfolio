@@ -1,9 +1,13 @@
+.main {
+  height: fit-content;
+}
 .workContainer {
   overflow-y: scroll;
   padding: 200px 100px 0 100px;
   height: 100vh;
 
   scrollbar-width: none;
+  color: white;
 }
 
 .workContainer::-webkit-scrollbar {
@@ -38,6 +42,7 @@
   gap: 56px;
   height: fit-content;
   padding-bottom: 40px;
+  border-bottom: 3px white solid;
 
   .detailImages {
     display: flex;
@@ -50,6 +55,7 @@
     width: 100%;
     height: auto;
     border-radius: 12px;
+    box-shadow: rgba(149, 157, 165, 0.1) 0px 0px 16px;
   }
 
   .detailSpecs {
@@ -68,7 +74,7 @@
   }
 
   .specsTitle {
-    font-weight: 600;
+    font-weight: 900;
     font-size: 24px;
     line-height: 32px;
     font-family: "Inter", sans-serif;
@@ -78,7 +84,50 @@
   .specsDesc {
     font-weight: normal;
     font-size: 18px;
-    line-height: 20px;
+    line-height: 22px;
     font-family: "Inter", sans-serif;
   }
+}
+
+
+.navigation{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 40px 0;
+  cursor: pointer;
+}
+
+.navigationInfo {
+  text-align: right;
+}
+
+.navigationInfo h3 {
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: lowercase;
+}
+
+.buttonContainer {
+  background: none;
+  outline: none;
+  border: none;
+
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: lowercase;
+  overflow: hidden;
+  cursor: pointer;
+  /* position: relative; */
+}
+
+.buttonContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navgiationInfo, .buttonContainer {
+  font-family: "Inter", sans-serif;
 }

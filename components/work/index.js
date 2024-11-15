@@ -10,10 +10,9 @@ export default function index({ index, title, theme, setModal, link }) {
   const { isActive, isLoading, setIsLoading, loadCount } = useMenuContext();
 
   const handleWorkClick = () => {
-    router.push(`/works/${link}`);
     setIsLoading(true);
     setModal({active: false, index});
-
+    setTimeout(() => router.push(`/works/${link}`), 400);
   };
 
   return (
@@ -31,11 +30,11 @@ export default function index({ index, title, theme, setModal, link }) {
             y: isActive ? "800%" : ["800%", "-15%", "0%"],
             skewY: isActive ? ["0deg", "5deg", "0deg"] : ["-5deg", "0deg"],
             transition: {
-              duration: 0.8,
+              duration: 0.7,
               delay: loadCount === 0 ? 1.4 : isActive ? 0 : 0.4,
               ease: "easeInOut",
               opacity: {
-                duration: 0.8,
+                duration: 0.7,
                 delay:
                   loadCount === 0
                     ? 1.4 + 0.05 * index
@@ -44,6 +43,18 @@ export default function index({ index, title, theme, setModal, link }) {
                     : 0.4 + 0.05 * index,
                 ease: "easeInOut",
               },
+            },
+          }}
+          exit={{
+            opacity: 0,
+            y: "800%",
+            skewY: "5deg",
+            transition: {
+              duration: 0.4,
+              ease: "easeInOut",
+              opacity: {
+                duration: .3
+              }
             },
           }}
           onMouseEnter={() => setModal({ active: true, index })}

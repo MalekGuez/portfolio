@@ -39,6 +39,18 @@ export default function Works() {
                 },
               },
             }}
+            exit={{
+              opacity: 0,
+              y: "200%",
+              skewY: "5deg",
+              transition: {
+                duration: 0.4,
+                ease: "easeInOut",
+                opacity: {
+                  duration: .3
+                }
+              },
+            }}
           >
             Works {works.length < 10 ? `0${works.length}` : works.length}
           </motion.h2>
