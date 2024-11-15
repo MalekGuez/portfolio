@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "../link";
+import Link from "../Link";
 
 import styles from "../style.module.css";
 
