@@ -1,7 +1,7 @@
 export const works = [
     {
         title: "Malek Guezouli",
-        src: "/static/images/works/portfolio/Logo.png",
+        src: "/static/images/works/malekguezouli/Logo.png",
         theme: "Design and Development",
         date: "Sept.2024",
         specs: [
