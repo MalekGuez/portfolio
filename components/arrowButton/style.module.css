@@ -1,0 +1,39 @@
+.buttonContainer {
+  background: none;
+  outline: none;
+  border: none;
+
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 900;
+  text-transform: lowercase;
+  overflow: hidden;
+  cursor: pointer;
+
+  position: relative;
+  width: fit-content;
+}
+
+.buttonContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: white;
+  transform-origin: left;
+}
+
+.letter {
+  display: inline-block;
+  position: relative;
+}
+.textContainer {
+  display: inline-flex;
+}

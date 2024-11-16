@@ -28,12 +28,12 @@ const items = [
         href: "/works"
     },
     {
-        title: "About me",
-        href: "/about-me"
+        title: "About",
+        href: "/about"
     },
     {
         title: "Contact",
-        href: "mailto:malekguezouli@gmail.com"
+        href: "mailto:guezoulimalek@gmail.com"
     }
 ];
 

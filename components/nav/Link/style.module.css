@@ -1,11 +1,26 @@
 .link {
-    text-transform: lowercase;
-    font-weight: 900;
-    font-size: 100px;
-    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    margin-top: 32px;
+    position: relative;
+    overflow: hidden;
 }
 
-.link span {
-    font-size: 32px;
-    
+
+.linkNumber {
+  font-size: 32px;
+  line-height: .9;
+}
+
+.linkText {
+  font-size: 100px;
+  line-height: .8;
+}
+
+.linkText,
+.linkNumber {
+  text-transform: lowercase;
+  font-weight: 900;
+  font-family: "Inter", sans-serif;
 }

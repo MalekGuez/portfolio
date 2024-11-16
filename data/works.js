@@ -120,7 +120,7 @@ export const works = [
         images: ["Home.png"],
         color: "#0050A2", 
         link: "weeb-lampe",
-        description: "WeebLampe is the first big website I've done during my school period. A simple shopping website made with PHP, HTML, CSS and JavaScript, helped me a lot to discover every aspect of a website.",     
+        description: "Weeb Lampe is the first website I've done during my school period. A simple shopping website made with PHP, HTML, CSS and JavaScript, helped me a lot to discover every aspect of a website.",     
     },
 
 ]

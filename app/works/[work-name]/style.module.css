@@ -8,6 +8,7 @@
 
   scrollbar-width: none;
   color: white;
+  position: relative;
 }
 
 .workContainer::-webkit-scrollbar {
@@ -109,25 +110,6 @@
   text-transform: lowercase;
 }
 
-.buttonContainer {
-  background: none;
-  outline: none;
-  border: none;
-
-  font-size: 24px;
-  font-weight: 900;
-  text-transform: lowercase;
-  overflow: hidden;
-  cursor: pointer;
-  /* position: relative; */
-}
-
-.buttonContent {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.navgiationInfo, .buttonContainer {
+.navgiationInfo {
   font-family: "Inter", sans-serif;
 }

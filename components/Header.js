@@ -8,19 +8,67 @@ import Nav from "./nav";
 import GradientBackground from "./GradientBackground";
 
 export default function Header() {
-  const { isLoading, isActive, setBgVisible, setBgMoveCount, bgMoveCount, setIsLoading, setIsActive } =
+  const { isLoading, isActive, bgVisible, setBgVisible, setBgMoveCount, bgMoveCount, setIsLoading, setIsActive } =
     useMenuContext();
   const router = useRouter();
   const pathname = usePathname();
+
+  const routes = [
+    {
+      path: '/',
+      title: 'Portfolio'
+    },
+    {
+      path: '/about',
+      title: 'About'
+    },
+    {
+      path: '/works',
+      title: 'Works'
+    },
+    {
+      path: '/works/malekguezouli',
+      title: 'Portfolio'
+    },
+    {
+      path: '/works/everyparts',
+      title: 'Every Parts'
+    },
+    {
+      path: '/works/charlemagne',
+      title: 'Charlemagne'
+    },
+    {
+      path: '/works/rentcar',
+      title: 'RentCar'
+    },
+    {
+      path: '/works/weeb-lampe',
+      title: 'Weeb Lampe'
+    },
+    {
+      path: '/404',
+      title: 'Not found'
+    }
+  ];
+
+  const getTitleFromPath = (path) => {
+    const route = routes.find(route => route.path === path)
+    return route?.title || "Portfolio";
+  }
 
   useEffect(() => {
     if (pathname !== "/") {
       setBgVisible(false);
       bgMoveCount === 0 && setBgMoveCount((m) => m + 1);
-    } else {
+    } else if (["/", "/about"].includes(pathname)) {
       setBgVisible(true);
     }
   }, [pathname, setBgVisible, setBgMoveCount]);
+
+  useEffect(() => {
+    document.title = `Malek Guezouli | ${getTitleFromPath(pathname)}`;
+  }, [pathname])
 
   return (
     <>

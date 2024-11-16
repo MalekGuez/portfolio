@@ -12,6 +12,7 @@ import {
 import styles from "./style.module.css";
 import { works } from "@/data/works";
 import { useMenuContext } from "@/app/context/MenuContext";
+import ArrowButton from "@/components/arrowButton";
 
 export default function WorkDetailPage({ params }) {
   const { setIsLoading } = useMenuContext();
@@ -80,7 +81,7 @@ export default function WorkDetailPage({ params }) {
             className={styles.workContainer}
             ref={workContainer}
             initial={{
-              opacity: opacity,
+              opacity: 0,
               y: "100%",
               skewY: "-5deg",
             }}
@@ -151,32 +152,7 @@ export default function WorkDetailPage({ params }) {
                     );
                   })}
                 {work.site && (
-                  <button
-                    className={styles.buttonContainer}
-                    onClick={() => handleVisitClick(work.site)}
-                  >
-                    <motion.div
-                      className={styles.buttonContent}
-                      initial={{ x: "-28px" }}
-                      whileHover={{ x: "0px" }}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="3"
-                        stroke="currentColor"
-                        style={{ width: "20px" }}
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                        />
-                      </svg>
-                      view website
-                    </motion.div>
-                  </button>
+                  <ArrowButton text="view website" handleClick={() => handleVisitClick(work.site)}/>
                 )}
               </div>
             </div>
@@ -186,29 +162,7 @@ export default function WorkDetailPage({ params }) {
               onMouseLeave={() => setNextHover(false)}
               onClick={handleNextClick}
             >
-              <button className={styles.buttonContainer}>
-                <motion.div
-                  className={styles.buttonContent}
-                  initial={{ x: "-20px" }}
-                  animate={{ x: nextHover ? "0px" : "-20px" }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="3"
-                    stroke="currentColor"
-                    style={{ width: "20px" }}
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                    />
-                  </svg>
-                  Next work
-                </motion.div>
-              </button>
+              <ArrowButton text="next work" containerHover={nextHover} animated={false}/>
               <div className={styles.navigationInfo}>
                 <h3>{nextWork.title}</h3>
                 <p>{nextWork.theme}</p>
