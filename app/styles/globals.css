@@ -10,6 +10,7 @@
   --cursor-circle-color: 78, 0, 255;
   --background-circle-size: 80%;
   --blending: hard-light;
+
 }
 
 
@@ -69,16 +70,63 @@ a {
   border-radius: 8px;
 
   font-size: 18px;
+  font-weight: 700;
+  text-transform: lowercase;
 }
 
 .btn-primary {
+  position: relative;
   background: #3500AD;
   color: white;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 120%;
+  height: 100%;
+  background: #280085;
+  transform: skew(25deg);
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.btn-primary:hover::after {
+  left: -10%;
 }
 
 .btn-secondary {
+  position: relative;
   background: transparent;
   border: 2px solid white;
+  color: white;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-secondary::after {
+  content: '';
+  position: absolute;
+  top: 0; 
+  left: -130%;
+  width: 120%;
+  height: 100%;
+  background: white;
+  transform: skew(25deg);
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.btn-secondary:hover {
+  color: black;
+}
+
+.btn-secondary:hover::after {
+  left: -10%;
 }
 
 @media (prefers-color-scheme: dark) {

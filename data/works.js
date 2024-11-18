@@ -2,20 +2,20 @@ export const works = [
     {
         title: "Malek Guezouli",
         src: "/static/images/works/malekguezouli/Logo.png",
-        theme: "Design and Development",
-        date: "Sept.2024",
+        theme: "dnd",
+        date: "sep2024",
         specs: [
             {
-                title: "Date",
-                value: "Sept.2024",
+                title: "date",
+                value: "sep2024",
             },
             {
-                title: "Roles/Services",
-                value: "Designer and Developer",
+                title: "rns",
+                value: "dnd",
             },
             {
-                title: "Techs",
-                value: "Figma, Next.js"
+                title: "techs",
+                value: "figmanextjs"
             }
         ],
         images: ["Home.png", "Loader.png", "Works.png", "Work.png", "About.png", "Menu.png"],
@@ -27,20 +27,20 @@ export const works = [
     {
         title: "Every Parts",
         src: "/static/images/works/everyparts/Logo.png",
-        theme: "Development",
-        date: "Jan.2024", 
+        theme: "dev",
+        date: "jan2024", 
         specs: [
             {
-                title: "Date",
-                value: "Jan.2024",
+                title: "date",
+                value: "jan2024",
             },
             {
-                title: "Roles/Services",
-                value: "Developer",
+                title: "rns",
+                value: "dev",
             },
             {
-                title: "Techs",
-                value: "Figma, VUEX Stack"
+                title: "techs",
+                value: "figmavuex"
             }
         ],
         images: ["Home.png", "Loader.png", "Manufacturers.png", "Models.png", "Model.png", "404.png"],
@@ -52,20 +52,20 @@ export const works = [
     {
         title: "Charlemagne",
         src: "/static/images/works/charlemagne/Logo.png",
-        theme: "Design and Development",
-        date: "July.2022",
+        theme: "dnd",
+        date: "jul2022",
         specs: [
             {
-                title: "Date",
-                value: "July.2022",
+                title: "date",
+                value: "jul2022",
             },
             {
-                title: "Roles/Services",
-                value: "Designer and Developer",
+                title: "rns",
+                value: "dnd",
             },
             {
-                title: "Techs",
-                value: "Figma, MERN Stack"
+                title: "techs",
+                value: "figmamern"
             }
         ],
         images: ["Home.png", "Orders.png", "Order.png", "History.png", "Contact.png", "Connect.png"],
@@ -77,20 +77,20 @@ export const works = [
     {
         title: "RentCar",
         src: "/static/images/works/rentcar/Logo.png",
-        theme: "Development",
-        date: "June.2022", 
+        theme: "dev",
+        date: "jun2022", 
         specs: [
             {
-                title: "Date",
-                value: "June.2022",
+                title: "date",
+                value: "jun2022",
             },
             {
-                title: "Roles/Services",
-                value: "Developer",
+                title: "rns",
+                value: "dev",
             },
             {
-                title: "Techs",
-                value: "C#, ADO.net"
+                title: "techs",
+                value: "csharpado"
             }
         ],
         images: ["Home.png", "SignIn.png", "SignUp.png", "Catalog.png", "Rent.png", "Profile.png", "Add.png", "Delete.png"],
@@ -101,20 +101,20 @@ export const works = [
     {
         title: "Weeb Lampe",
         src: "/static/images/works/weeb-lampe/Logo.png",
-        theme: "Design and Development",
-        date: "June.2021", 
+        theme: "dnd",
+        date: "jun2021", 
         specs: [
             {
-                title: "Date",
-                value: "June.2021",
+                title: "date",
+                value: "jun2021",
             },
             {
-                title: "Roles/Services",
-                value: "Developer",
+                title: "rns",
+                value: "dnd",
             },
             {
-                title: "Techs",
-                value: "HTML, CSS, JavaScript, PHP"
+                title: "techs",
+                value: "htmlcssphpjs"
             }
         ],
         images: ["Home.png"],

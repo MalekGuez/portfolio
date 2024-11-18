@@ -8,9 +8,11 @@ import Modal from "@/components/modal";
 import { useMenuContext } from "../context/MenuContext";
 
 import { works } from "@/data/works"; 
+import { useTranslation } from "react-i18next";
 
 export default function Works() {
   const { loadCount, isActive, isLoading } = useMenuContext();
+  const { t } = useTranslation();
 
   const [modal, setModal] = useState({ active: false, index: 0 });
   return (
@@ -29,11 +31,11 @@ export default function Works() {
               y: isActive ? "800%" : ["800%", "-15%", "0%"],
               skewY: isActive ? ["0deg", "5deg", "0deg"] : ["-5deg", "0deg"],
               transition: {
-                duration: 0.8,
+                duration: 0.7,
                 delay: loadCount === 0 ? 1.4 : isActive ? 0.15 : 0.4,
                 ease: "easeInOut",
                 opacity: {
-                  duration: 0.8,
+                  duration: 0.7,
                   delay: loadCount === 0 ? 1.4 : isActive ? 0 : 0.4,
                   ease: "easeInOut",
                 },
@@ -44,15 +46,15 @@ export default function Works() {
               y: "200%",
               skewY: "5deg",
               transition: {
-                duration: 0.4,
+                duration: 0.3,
                 ease: "easeInOut",
                 opacity: {
-                  duration: .3
+                  duration: .2
                 }
               },
             }}
           >
-            Works {works.length < 10 ? `0${works.length}` : works.length}
+             {t("works.title")} {works.length < 10 ? `0${works.length}` : works.length}
           </motion.h2>
         )}
       </AnimatePresence>
@@ -64,7 +66,8 @@ export default function Works() {
               key={index}
               index={index}
               title={work.title}
-              theme={work.date + " / " + work.theme}
+              dateKey={work.date}
+              themeKey={work.theme}
               setModal={setModal}
               link={work.link}
             />

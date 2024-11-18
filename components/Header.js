@@ -3,13 +3,14 @@ import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useMenuContext } from "@/app/context/MenuContext";
 import { motion } from "framer-motion";
+import { useTranslation } from 'react-i18next';
 import styles from "@/app/styles/Header.module.css";
 import Nav from "./nav";
 import GradientBackground from "./GradientBackground";
 
 export default function Header() {
-  const { isLoading, isActive, bgVisible, setBgVisible, setBgMoveCount, bgMoveCount, setIsLoading, setIsActive } =
-    useMenuContext();
+  const { t, i18n } = useTranslation();
+  const { isLoading, isActive, setIsLoading, setIsActive } = useMenuContext();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -20,11 +21,11 @@ export default function Header() {
     },
     {
       path: '/about',
-      title: 'About'
+      title: t('header.about')
     },
     {
       path: '/works',
-      title: 'Works'
+      title: t('header.works')
     },
     {
       path: '/works/malekguezouli',
@@ -48,7 +49,7 @@ export default function Header() {
     },
     {
       path: '/404',
-      title: 'Not found'
+      title: t('page.notfound')
     }
   ];
 
@@ -57,18 +58,15 @@ export default function Header() {
     return route?.title || "Portfolio";
   }
 
-  useEffect(() => {
-    if (pathname !== "/") {
-      setBgVisible(false);
-      bgMoveCount === 0 && setBgMoveCount((m) => m + 1);
-    } else if (["/", "/about"].includes(pathname)) {
-      setBgVisible(true);
-    }
-  }, [pathname, setBgVisible, setBgMoveCount]);
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'en' ? 'fr' : 'en';
+    i18n.changeLanguage(newLang);
+    setIsLoading(true);
+  };
 
   useEffect(() => {
     document.title = `Malek Guezouli | ${getTitleFromPath(pathname)}`;
-  }, [pathname])
+  }, [pathname, i18n.language])
 
   return (
     <>
@@ -90,9 +88,9 @@ export default function Header() {
               },
             }}
             onClick={() => {
-              pathname !== "/" && router.push("/");
               setIsLoading(true);
               setIsActive(false);
+              pathname !== "/" && setTimeout(() => router.push("/"), 400);
             }}
           />
           <motion.div
@@ -123,12 +121,13 @@ export default function Header() {
                 ease: "easeInOut",
               },
             }}
+            onClick={toggleLanguage}
           >
-            FR
+            {i18n.language === "en" ? "EN" : "FR"}
           </motion.div>
           <motion.div
             className={styles.headerTheme}
-            initial={{ y: "-150px" }}
+            initial={{ y: "-150px", borderRadius: "50%", rotate: 0, scale: 1 }}
             animate={{
               y: !isLoading && "0px",
               transition: {
@@ -136,6 +135,22 @@ export default function Header() {
                 delay: 1.35,
                 ease: "easeInOut",
               },
+            }}
+            whileHover={{
+              rotate: [0, 5, -5, 5, -5, 0],
+              borderRadius: ["50%", "40%", "50%"],
+              scale: 1.2,
+              transition: {
+                duration: 1.2,
+                ease: "easeInOut",
+                times: [0, 0.2, 0.4, 0.6, 0.8, 1],
+                repeat: Infinity,
+                scale: {
+                  duration: 1.2,
+                  ease: "easeInOut",
+                  repeat: 0,
+                }
+              }
             }}
           />
           <Nav />

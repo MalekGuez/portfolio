@@ -3,17 +3,17 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "../app/styles/GradientBackground.module.css";
 import { useMenuContext } from "@/app/context/MenuContext";
+import { usePathname } from "next/navigation";
 
 export default function GradientBackground() {
+  const pathname = usePathname();
   const interactive = useRef(null);
 
   const [positions, setPositions] = useState([]);
   const targetPositionsRef = useRef([]);
-  const [initialAnimationComplete, setInitialAnimationComplete] =
-    useState(false);
+  const [initialAnimationComplete, setInitialAnimationComplete] = useState(false);
 
-  const { isActive, bgVisible, bgMoveCount, setBgMoveCount } = useMenuContext();
-
+  const { isActive, bgVisible, bgMoveCount, setBgMoveCount, setBgVisible, loadCount } = useMenuContext();
   const generateRandomPosition = () => ({
     x: Math.random() * 100 - 50,
     y: Math.random() * 100 - 50,
@@ -32,15 +32,27 @@ export default function GradientBackground() {
       setPositions(newPositions);
       targetPositionsRef.current = newPositions;
     }, 5900);
-
+    
     return () => clearInterval(intervalId);
   }, [isActive, initialAnimationComplete]);
 
   useEffect(() => {
-    if (isActive) {
+    if (isActive || ["/", "/about"].includes(pathname)) {
       setInitialAnimationComplete(false);
     }
-  }, [isActive]);
+  }, [isActive, pathname]);
+
+  useEffect(() => {
+    if (["/", "/about"].includes(pathname)) {
+      setBgVisible(true);
+      loadCount === 0 && setBgMoveCount(0);
+    }
+    else {
+      setBgVisible(false);
+      bgMoveCount === 0 && setBgMoveCount((m) => m + 1);
+    }
+  }, [pathname, setBgVisible, setBgMoveCount, bgMoveCount, loadCount]);
+  
 
   useEffect(() => {
     if (interactive.current) {
@@ -90,7 +102,7 @@ export default function GradientBackground() {
       </svg>
       <div className={styles.gradients}>
         <AnimatePresence mode="sync">
-          {!isActive && bgVisible &&
+          {(!isActive && bgVisible) &&
             positions.map((pos, index) => (
               <motion.div
                 key={index}
@@ -111,7 +123,7 @@ export default function GradientBackground() {
                   opacity: 1,
                   scale: 1,
                   transition: {
-                    delay: bgMoveCount === 0 && 3.2,
+                    delay: bgMoveCount === 0 ? 3.2 : 0,
                     duration: initialAnimationComplete ? 6 : 1,
                     ease: "easeInOut",
                   },
@@ -140,7 +152,7 @@ export default function GradientBackground() {
           ref={interactive}
           initial={false}
           animate={{
-            opacity: isActive || !bgVisible ? 0 : 0.7,
+            opacity: (!isActive && bgVisible) ? 0.7 : 0,
             transition: { duration: 0.4, ease: "easeInOut" },
           }}
         />

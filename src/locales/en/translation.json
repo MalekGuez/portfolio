@@ -1,0 +1,71 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "works": "Works",
+    "contact": "Contact me"
+  },
+  "home": {
+    "title": "Hey, I'm",
+    "subtitle": "I am a front-end developer driven by a passion for building high-performance, visually appealing, and accessible websites and applications.",
+    "worksBtn": "See my works",
+    "aboutBtn": "More about me"
+  },
+  "works": {
+    "title": "Works",
+    "jan2024": "Jan.2024",
+    "jun2022": "June.2022",
+    "jun2021": "June.2021",
+    "jul2022": "July.2022",
+    "sep2024": "Sept.2024",
+    "dev": "Development",
+    "dnd": "Design and Development",
+    "nextBtn": "next project"
+  },
+  "work": {
+    "malekguezouli": {
+      "description": "This portfolio, which incorporates all of the design and development knowledge I learned since I started. It was created as a means of establishing my own unique identity. This website serves as both a venue for me to exhibit my work and a blank canvas on which I may try out new methods and develop my skills.",
+      "dnd": "Designer and Developer",
+      "theme": "Design and Development",
+      "sep2024": "Sept.2024",
+      "figmanextjs": "Figma, NextJS"
+    },
+    "everyparts": {
+      "description": "The main Every Parts is a tool that manages information between spare parts and compatible devices, vehicles, or equipment. It fills the gaps left by ERP, CRM, or CMS systems regarding assembly, assignment, or product compatibility. \nThis site is a VUEX Stack made to showcase what the tool is capable of, it retrieves data from an API created on an admin panel used to manage all the data displayed on the site.",
+      "theme": "Development",
+      "dev": "Developer",
+      "jan2024": "Jan.2024",
+      "figmavuex": "Figma, VUEX Stack"
+    },
+    "charlemagne": {
+      "description": "Charlemagne is a takeaway sales site made for a school restaurant. Made with MERN Stack during my school period, it was my first full-stack project. It has an admin panel made to create every dishes, users, dates with their dishes etc..",
+      "theme": "Design and Development",
+      "dnd": "Designer and Developer",
+      "jul2022": "July.2022",
+      "figmamern": "Figma, MERN Stack"
+    },
+    "rentcar": {
+      "description": "RentCar is a C#/ADO.net application made to rent cars as its name says. This application was made during my school period while learning about C# and ADO.net. It was fun messing around with techs that I wasn't used to, and helped me a lot to understand databases and their structure.",
+      "theme": "Development",
+      "dev": "Developer",
+      "jun2022": "June.2022",
+      "csharpado": "C#, ADO.net"
+    },
+    "weeb-lampe": {
+      "description": "Weeb Lampe is the first website I've done during my school period. A simple shopping website made with PHP, HTML, CSS and JavaScript, helped me a lot to discover every aspect of a website.",
+      "theme": "Design and Development",
+      "dev": "Designer and Developer",
+      "jun2021": "June.2021",
+      "htmlcssphpjs": "HTML, CSS, PHP, JavaScript"
+    },
+    "visitBtn": "view website",
+    "rns": "Roles",
+    "date": "Date",
+    "techs": "Techs"
+  },
+  "about": {
+    "title": "DESIGNER & FRONT-END DEVELOPER",
+    "description": "Hey, my name is <strong>Malek</strong>, a front-end developer currently based in France. I'm driven by a passion for building high-performance, visually appealing, and accessible websites and applications.<br />I care a lot about the user experience, and I'm passionate for UI animations and creating intuitive, dynamic user experiences. I'm always being curious about learning new technologies or creating fancy design/coding.",
+    "aboutBtn": "my resume"
+  }
+} 

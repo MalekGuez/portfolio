@@ -5,9 +5,12 @@ import pageStyles from "../styles/page.module.css";
 import styles from "./style.module.css";
 import { useMenuContext } from "@/app/context/MenuContext";
 import ArrowButton from "@/components/arrowButton";
+import { useTranslation } from "react-i18next";
+import parse from "html-react-parser";
 
 export default function About() {
   const { isLoading, isActive, loadCount } = useMenuContext();
+  const { t } = useTranslation();
 
   const handleResumeClick = () => {
     window.open('/about/malek-guezouli.pdf', "_blank");
@@ -43,18 +46,11 @@ export default function About() {
               },
             }}
           >
-            <h2 className={styles.title}>DESIGNER & FRONT-END DEVELOPER</h2>
+            <h2 className={styles.title}>{t("about.title")}</h2>
             <p className={styles.description}>
-              Hey, my name is <strong>Malek</strong>, a front-end developer
-              currently based in France. I’m driven by a passion for building
-              high-performance, visually appealing, and accessible websites and
-              applications.
-              <br />I care a lot about the user experience, and I’m passionate
-              for UI animations and creating intuitive, dynamic user
-              experiences. I’m always being curious about learning new
-              technologies or creating fancy design/coding.
+              {parse(t("about.description"))}
             </p>
-            <ArrowButton text="my resume" handleClick={handleResumeClick} />
+            <ArrowButton text={t("about.aboutBtn")} handleClick={handleResumeClick} />
           </motion.div>
         )}
       </AnimatePresence>

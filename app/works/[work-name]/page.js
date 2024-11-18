@@ -13,11 +13,13 @@ import styles from "./style.module.css";
 import { works } from "@/data/works";
 import { useMenuContext } from "@/app/context/MenuContext";
 import ArrowButton from "@/components/arrowButton";
+import { useTranslation } from "react-i18next";
 
 export default function WorkDetailPage({ params }) {
   const { setIsLoading } = useMenuContext();
   const [nextHover, setNextHover] = useState(false);
   const router = useRouter();
+  const { t } = useTranslation();
   const { "work-name": workName } = params;
 
   const currentWorkIndex = works.findIndex(
@@ -116,7 +118,7 @@ export default function WorkDetailPage({ params }) {
               style={{ opacity: isScrolled ? 0 : opacity }}
             >
               <h2 className={styles.descriptionTitle}>{work.title}</h2>
-              <p className={styles.description}>{work.description}</p>
+              <p className={styles.description}>{t(`work.${work.link}.description`)}</p>
             </motion.div>
 
             <div className={styles.workDetail}>
@@ -146,13 +148,13 @@ export default function WorkDetailPage({ params }) {
                   work.specs.map((spec, index) => {
                     return (
                       <div className={styles.specs} key={index}>
-                        <h3 className={styles.specsTitle}>{spec.title}</h3>
-                        <span className={styles.specsDesc}>{spec.value}</span>
+                        <h3 className={styles.specsTitle}>{t(`work.${spec.title}`)}</h3>
+                        <span className={styles.specsDesc}>{t(`work.${work.link}.${spec.value}`)}</span>
                       </div>
                     );
                   })}
                 {work.site && (
-                  <ArrowButton text="view website" handleClick={() => handleVisitClick(work.site)}/>
+                  <ArrowButton text={t("work.visitBtn")} handleClick={() => handleVisitClick(work.site)}/>
                 )}
               </div>
             </div>
@@ -162,10 +164,10 @@ export default function WorkDetailPage({ params }) {
               onMouseLeave={() => setNextHover(false)}
               onClick={handleNextClick}
             >
-              <ArrowButton text="next work" containerHover={nextHover} animated={false}/>
+              <ArrowButton text={t("works.nextBtn")} containerHover={nextHover} animated={false}/>
               <div className={styles.navigationInfo}>
                 <h3>{nextWork.title}</h3>
-                <p>{nextWork.theme}</p>
+                <p>{t(`work.${nextWork.link}.theme`)}</p>
               </div>
             </div>
           </motion.div>

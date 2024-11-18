@@ -1,0 +1,71 @@
+{
+  "header": {
+    "home": "Accueil",
+    "about": "À propos",
+    "works": "Projets",
+    "contact": "Contactez-moi"
+  },
+  "home": {
+    "title": "Hey, je suis",
+    "subtitle": "Je suis un développeur front-end animé par la passion de créer des sites web et des applications performants, visuellement attrayants et accessibles.",
+    "worksBtn": "Voir mes projets",
+    "aboutBtn": "En savoir plus"
+  },
+  "works": {
+    "title": "Projets",
+    "jan2024": "Jan.2024",
+    "jun2022": "Juin.2022",
+    "jun2021": "Juin.2021",
+    "jul2022": "Juil.2022",
+    "sep2024": "Sept.2024",
+    "dev": "Développement",
+    "dnd": "Design et Développement",
+    "nextBtn": "projet suivant"
+  },
+  "work": {
+    "malekguezouli": {
+      "description": "Mon portfolio intègre toutes les connaissances en design et en développement que j'ai acquises depuis mes débuts. Il a été créé comme un moyen d'établir ma propre identité unique. Ce site web sert à la fois de vitrine pour exposer mon travail et de toile blanche sur laquelle je peux expérimenter de nouvelles méthodes et développer mes compétences.",
+      "dnd": "Designer et Développeur",
+      "theme": "Design et Développement",
+      "sep2024": "Sept.2024",
+      "figmanextjs": "Figma, NextJS"
+    },
+    "everyparts": {
+      "description": "Every Parts est un outil qui gère les informations entre les pièces détachées et les appareils, véhicules ou équipements compatibles. Il comble les lacunes laissées par les systèmes ERP, CRM ou CMS concernant l'assemblage, l'attribution ou la compatibilité des produits. \nCe site est réalisé avec VUEX Stack, afin de mettre en avant les capacités de l'outil. Il récupère les données d'une API créée sur un panneau d'administration utilisé pour gérer toutes les données affichées sur le site.",
+      "theme": "Développement",
+      "dev": "Développeur",
+      "jan2024": "Jan.2024",
+      "figmavuex": "Figma, VUEX Stack"
+    },
+    "charlemagne": {
+      "description": "Charlemagne est un site de ventes à emporter créé pour un restaurant scolaire. Réalisé avec MERN Stack pendant ma période scolaire, ce fut mon premier projet full-stack. Il dispose d'un panneau d'administration permettant de créer tous les plats, utilisateurs, dates avec leurs plats, etc.",
+      "theme": "Design et Développement",
+      "dnd": "Designer et Développeur",
+      "jul2022": "Juil.2022",
+      "figmamern": "Figma, MERN Stack"
+    },
+    "rentcar": {
+      "description": "RentCar est une application C#/ADO.net conçue pour la location de voitures comme son nom l'indique. Cette application a été créée pendant ma période scolaire lors de mon apprentissage de C# et ADO.net. C'était amusant d'expérimenter des technologies auxquelles je n'étais pas habitué, et cela m'a beaucoup aidé à comprendre les bases de données et leur structure.",
+      "theme": "Développement",
+      "dev": "Développeur",
+      "jun2022": "Juin.2022",
+      "csharpado": "C#, ADO.net"
+    },
+    "weeb-lampe": {
+      "description": "Weeb Lampe est le premier site web que j'ai réalisé pendant ma période scolaire. Un simple site e-commerce créé avec PHP, HTML, CSS et JavaScript, qui m'a beaucoup aidé à découvrir tous les aspects d'un site web.",
+      "theme": "Design et Développement",
+      "dev": "Designer et Développeur",
+      "jun2021": "Juin.2021",
+      "htmlcssphpjs": "HTML, CSS, PHP, JavaScript"
+    },
+    "visitBtn": "voir le site",
+    "rns": "Rôles",
+    "date": "Date",
+    "techs": "Techs"
+  },
+  "about": {
+    "title": "DESIGNER & DÉVELOPPEUR FRONT-END",
+    "description": "Hey, je suis <strong>Malek</strong>, un développeur front-end basé en France. Je suis animé par la passion de créer des sites web et des applications performants, visuellement attrayants et accessibles.<br />Je suis passionné par les animations et la création d'expériences utilisateur intuitives et dynamiques. Je suis toujours curieux d'apprendre de nouvelles technologies ou de créer des designs/codes originaux.",
+    "aboutBtn": "mon cv"
+  }
+} 

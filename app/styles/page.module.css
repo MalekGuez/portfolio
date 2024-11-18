@@ -15,23 +15,22 @@
 .introContainer {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 100%;
   gap: 24px;
 }
 
 .introContainer h1 {
   width: 100%;
-  font-size: 100px;
+  font-size: 92px;
   text-transform: uppercase;
   font-weight: 900;
   font-family: "Heatrix", sans-serif;
-  line-height: 100px;
-  /* font-stretch: expanded; */
+  line-height: 96px;
 }
 
 .introContainer p {
   max-width: 855px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .titleStroke {
@@ -50,3 +49,31 @@
     filter: invert();
   }
 }
+
+@media (max-width: 1440px) {
+  .main {
+    padding: 135px 60px 0 60px;
+  }
+  .introContainer h1 {
+    font-size: 78px;
+    line-height: 80px;
+  }
+}
+@media (max-width: 1024px) {
+  .main {
+    padding: 175px 60px 0 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 175px 48px 0 48px;
+  }
+}
+
+@media (max-width: 425px) {
+  .main {
+    padding: 175px 16px 0 16px;
+  }
+}
+

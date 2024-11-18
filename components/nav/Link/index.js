@@ -5,8 +5,8 @@ import Link from "next/link";
 
 import styles from "./style.module.css";
 
-export default function index({ data }) {
-  const { setIsLoading, setIsActive, delayLoadingBar } = useMenuContext();
+export default function index({ data, lang }) {
+  const { isLoading, setIsLoading, setIsActive, delayLoadingBar } = useMenuContext();
 
   const nbLink = 4;
 
@@ -19,18 +19,18 @@ export default function index({ data }) {
     enter: (i) => ({
       y: "0px",
       skewY: "0deg",
-      opacity: 1,
+      opacity: isLoading ? 0 : 1,
       transition: {
         duration: 0.8,
         ease: [0.76, 0, 0.24, 1],
-        delay: 0.05 * i,
+        delay: isLoading ? 0.05 : 0.05 * i,
         skewY: {
           delay: 0.45,
           duration: 0.5,
         },
         opacity: {
-          duration: 0.5,
-          delay: 0.1 * i,
+          duration: 0.4,
+          delay: isLoading ? 0.15 : 0.15 * i,
         },
       },
     }),
@@ -54,6 +54,7 @@ export default function index({ data }) {
     setIsLoading(true);
     setIsActive(false);
   };
+
   return (
     <motion.div
       variants={slide}
@@ -64,7 +65,7 @@ export default function index({ data }) {
       whileHover="hovered"
       style={{
         width: "fit-content",
-        minWidth: "350px",
+        minWidth: lang === "fr" ? "450px" : "350px",
       }}
     >
       <Link
@@ -78,22 +79,22 @@ export default function index({ data }) {
           {data.title.split("").map((l, i) => {
             return (
               <motion.span
-                variants={{ initial: { y: 0 }, hovered: { y: "-100%" } }}
+                variants={{ initial: { y: 0 }, hovered: { y: "-125%" } }}
                 transition={{
                   duration: 0.2,
-                  delay: 0.010 * i,
+                  delay: 0.025 * i,
                   ease: "easeInOut",
                 }}
                 style={{ display: "inline-block" }}
                 key={i}
                 className={styles.linkText}
               >
-                {l}
+                {l === " " ? "\u00A0" : l}
               </motion.span>
             );
           })}
         </div>
-        <div style={{ position: "absolute", left: "53.3px" }}>
+        <div style={{ position: "absolute", left: "69px" }}>
           {data.title.split("").map((l, i) => {
             return (
               <motion.span
@@ -110,7 +111,7 @@ export default function index({ data }) {
                 key={i}
                 className={styles.linkText}
               >
-                {l}
+                {l === " " ? "\u00A0" : l}
               </motion.span>
             );
           })}

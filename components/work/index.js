@@ -4,11 +4,12 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { useMenuContext } from "@/app/context/MenuContext";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
-export default function index({ index, title, theme, setModal, link }) {
+export default function index({ index, title, dateKey, themeKey, setModal, link }) {
   const router = useRouter();
   const { isActive, isLoading, setIsLoading, loadCount } = useMenuContext();
-
+  const { t } = useTranslation();
   const handleWorkClick = () => {
     setIsLoading(true);
     setModal({active: false, index});
@@ -62,7 +63,7 @@ export default function index({ index, title, theme, setModal, link }) {
           onClick={handleWorkClick}
         >
           <h2 className={styles.title}>{title}</h2>
-          <span className={styles.theme}>{theme}</span>
+          <span className={styles.theme}>{t(`works.${dateKey}`)} / {t(`works.${themeKey}`)}</span>
         </motion.div>
       )}
     </AnimatePresence>

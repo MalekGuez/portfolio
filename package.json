@@ -11,9 +11,13 @@
   "dependencies": {
     "framer-motion": "^11.9.0",
     "gsap": "^3.12.5",
+    "html-react-parser": "^5.1.18",
+    "i18next": "^23.16.5",
+    "i18next-browser-languagedetector": "^8.0.0",
     "locomotive-scroll": "^5.0.0-beta.21",
     "next": "14.2.13",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-i18next": "^15.1.1"
   }
 }
