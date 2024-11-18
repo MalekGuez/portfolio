@@ -46,6 +46,7 @@ export default function Loading() {
               opacity: 0,
               transition: { delay: 0.4, duration: 0.4 },
             }}
+            className={styles.loadingSvg}
           >
             <motion.path
               initial={{

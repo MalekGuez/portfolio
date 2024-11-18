@@ -41,3 +41,20 @@
   background-color: white;
   z-index: 9999;
 }
+
+@media (max-width: 768px) {
+  .loadingSvg {
+    width: 40px;
+  }
+  .text {
+    font-size: 24px;
+    margin-left: 12px;
+  }
+}
+
+@media (max-width: 425px) {
+  .text {
+    font-size: 18px;
+    margin-left: 12px;
+  }
+}

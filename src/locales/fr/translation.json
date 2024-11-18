@@ -3,7 +3,7 @@
     "home": "Accueil",
     "about": "À propos",
     "works": "Projets",
-    "contact": "Contactez-moi"
+    "contact": "Contact"
   },
   "home": {
     "title": "Hey, je suis",
@@ -24,7 +24,7 @@
   },
   "work": {
     "malekguezouli": {
-      "description": "Mon portfolio intègre toutes les connaissances en design et en développement que j'ai acquises depuis mes débuts. Il a été créé comme un moyen d'établir ma propre identité unique. Ce site web sert à la fois de vitrine pour exposer mon travail et de toile blanche sur laquelle je peux expérimenter de nouvelles méthodes et développer mes compétences.",
+      "description": "Mon portfolio intègre toutes les connaissances en développement et en design que j'ai acquises depuis mes débuts. Il a été créé comme un moyen d'établir ma propre identité numérique. Ce site web sert à la fois de vitrine pour exposer mon travail et de toile blanche sur laquelle je peux expérimenter de nouvelles méthodes et développer mes compétences.",
       "dnd": "Designer et Développeur",
       "theme": "Design et Développement",
       "sep2024": "Sept.2024",

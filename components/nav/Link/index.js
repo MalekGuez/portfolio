@@ -94,7 +94,7 @@ export default function index({ data, lang }) {
             );
           })}
         </div>
-        <div style={{ position: "absolute", left: "69px" }}>
+        <div className={styles.textAbs} style={{ position: "absolute", left: "69px" }}>
           {data.title.split("").map((l, i) => {
             return (
               <motion.span

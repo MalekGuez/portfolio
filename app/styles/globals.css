@@ -70,8 +70,12 @@ a {
   border-radius: 8px;
 
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: lowercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .btn-primary {
@@ -132,5 +136,21 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn {
+    width: 180px;
+    height: 52px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 425px) {
+  .btn {
+    width: 150px;
+    height: 48px;
+    font-size: 14px;
   }
 }

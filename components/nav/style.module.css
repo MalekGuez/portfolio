@@ -35,9 +35,28 @@
     z-index: -1;
     top: 0;
     left: 0;
-    /* background: linear-gradient(to left top, #0e002c, #0d0029, #0c0025, #0a0022, #08001e, #07001b, #060018, #050015, #040012, #04000e, #03010a, #020105); */
 }
 
-.navItem {
-    
+@media (max-width: 1024px) {
+    .navItems {
+        padding: 127px 0 0 80px;
+    }
+    .menu {
+        width: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navItems {
+        padding: 111px 0 0 32px;
+    }
+    .menu {
+        width: 44px;
+    }
+}
+
+@media (max-width: 425px) {
+    .navItems {
+        padding: 103px 0 0 24px;
+    }
 }

@@ -3,8 +3,8 @@
 }
 
 .title {
-    margin-top: 40px;
-    font-size: 88px;
+    margin-top: 24px;
+    font-size: 72px;
     line-height: 88px;
     text-transform: uppercase;
     font-family: "Heatrix", sans-serif;
@@ -18,7 +18,45 @@
 .description {
     margin: 32px 0;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 26px;
     font-family: "Inter", sans-serif;
 }
+
+@media (max-width: 1024px) {
+    .title {
+        font-size: 64px;
+        line-height: 78px;
+        padding-bottom: 24px;
+    }
+    .description {
+        font-size: 18px;
+        line-height: 24px;
+        margin: 24px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 50px;
+        line-height: 64px;
+        padding-bottom: 12px;
+        margin-top: 12px;
+    }
+    .description {
+        font-size: 16px;
+        line-height: 22px;
+        margin: 12px 0;
+    }
+}
+
+@media (max-width: 425px) {
+    .title {
+        font-size: 32px;
+        line-height: 48px;
+    }
+    .description {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}   
