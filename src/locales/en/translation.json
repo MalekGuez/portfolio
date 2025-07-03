@@ -14,6 +14,7 @@
   "works": {
     "title": "Works",
     "jan2024": "Jan.2024",
+    "jan2025": "Jan.2025",
     "jun2022": "June.2022",
     "jun2021": "June.2021",
     "jul2022": "July.2022",
@@ -23,6 +24,13 @@
     "nextBtn": "next project"
   },
   "work": {
+    "dnd": {
+      "description": "This site is a drag-and-drop site that allows for text layout. It was supposed to be completed within 48 hours as a test, so it is not yet complete.",
+      "dnd": "Designer and Developer",
+      "theme": "Design and Development",
+      "jan2025": "Jan.2025",
+      "figmanextjs": "Figma, NextJS"
+    },
     "malekguezouli": {
       "description": "This portfolio, which incorporates all of the design and development knowledge I learned since I started. It was created as a means of establishing my own unique identity. This website serves as both a venue for me to exhibit my work and a blank canvas on which I may try out new methods and develop my skills.",
       "dnd": "Designer and Developer",

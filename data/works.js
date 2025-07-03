@@ -1,5 +1,30 @@
 export const works = [
     {
+        title: "Drag'n'Drop",
+        src: "/static/images/works/dnd/Logo.png",
+        theme: "dnd",
+        date: "jan2025",
+        specs: [
+            {
+                title: "date",
+                value: "jan2025",
+            },
+            {
+                title: "rns",
+                value: "dnd",
+            },
+            {
+                title: "techs",
+                value: "figmanextjs"
+            }
+        ],
+        images: ["Home.png", "Home-opened.png"],
+        color: "#FFBEA2",
+        link: "dnd",
+        site: "https://www.dnd.malekguezouli.com",
+        description: "This site is a drag-and-drop site that allows for text layout. It was supposed to be completed within 48 hours as a test, so it is not yet complete.",
+    },
+    {
         title: "Malek Guezouli",
         src: "/static/images/works/malekguezouli/Logo.png",
         theme: "dnd",

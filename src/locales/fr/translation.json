@@ -14,6 +14,7 @@
   "works": {
     "title": "Projets",
     "jan2024": "Jan.2024",
+    "jan2025": "Jan.2025",
     "jun2022": "Juin.2022",
     "jun2021": "Juin.2021",
     "jul2022": "Juil.2022",
@@ -23,6 +24,13 @@
     "nextBtn": "projet suivant"
   },
   "work": {
+    "dnd": {
+      "description": "Ce site est d'un site de \"glisser déposer\" permettant la mise en page de texte. Il devait être réalisé sous 48h, donc il n'est pas complet.",
+      "dnd": "Designer et Développeur",
+      "theme": "Design et Développement",
+      "jan2025": "Jan.2025",
+      "figmanextjs": "Figma, NextJS"
+    },
     "malekguezouli": {
       "description": "Mon portfolio intègre toutes les connaissances en développement et en design que j'ai acquises depuis mes débuts. Il a été créé comme un moyen d'établir ma propre identité numérique. Il sert à la fois de vitrine pour exposer mon travail et de toile blanche sur laquelle je peux expérimenter de nouvelles méthodes et développer mes compétences.",
       "dnd": "Designer et Développeur",
