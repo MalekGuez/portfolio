@@ -24,8 +24,15 @@
     "nextBtn": "next project"
   },
   "work": {
+    "pokedex": {
+      "description": "Pokedex is a responsive web application focused on the Pokémon universe. It allows users to browse a complete Pokédex, organized by regions (from Kanto to Paldea), with detailed pages for each Pokémon. The interface is built for a clean and fast user experience, with generation-based navigation.",
+      "dnd": "Designer and Developer",
+      "theme": "Design and Development",
+      "jan2025": "June.2025",
+      "figmanextjs": "Figma, NextJS"
+    },
     "dnd": {
-      "description": "This site is a drag-and-drop site that allows for text layout. It was supposed to be completed within 48 hours as a test, so it is not yet complete.",
+      "description": "Drag'n'Drop is as its name says a drag-and-drop site that allows for text layout. It was supposed to be completed within 48 hours as a test, so it is not yet complete.",
       "dnd": "Designer and Developer",
       "theme": "Design and Development",
       "jan2025": "Jan.2025",

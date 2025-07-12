@@ -133,6 +133,7 @@ export default function WorkDetailPage({ params }) {
                         alt="Work images"
                         width={1000}
                         height={0}
+                        unoptimized 
                       />
                     );
                   })}
