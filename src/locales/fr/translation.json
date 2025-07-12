@@ -15,8 +15,9 @@
     "title": "Projets",
     "jan2024": "Jan.2024",
     "jan2025": "Jan.2025",
-    "jun2022": "Juin.2022",
     "jun2021": "Juin.2021",
+    "jun2022": "Juin.2022",
+    "jun2025": "Juin.2025",
     "jul2022": "Juil.2022",
     "sep2024": "Sept.2024",
     "dev": "Développement",
@@ -28,7 +29,7 @@
       "description": "Pokedex est une application web responsive dédiée à l’univers Pokémon. Elle permet aux utilisateurs de parcourir un Pokédex complet, organisé par régions (de Kanto à Paldea), avec des fiches détaillées pour chaque Pokémon. L’interface est conçue pour être claire, rapide et facile à utiliser, avec un affichage structuré par génération.",
       "dnd": "Designer et Développeur",
       "theme": "Design et Développement",
-      "jun2025": "June.2025",
+      "jun2025": "Juin.2025",
       "figmanextjs": "Figma, NextJS"
     },
     "dnd": {
