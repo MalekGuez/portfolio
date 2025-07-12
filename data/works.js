@@ -3,7 +3,7 @@ export const works = [
         title: "Pokédex",
         src: "/static/images/works/pokedex/Logo.png",
         theme: "dnd",
-        date: "june2025",
+        date: "jun2025",
         specs: [
             {
                 title: "date",
@@ -19,7 +19,7 @@ export const works = [
             }
         ],
         images: ["Home.png", "Pokedex.png", "Pokedex-opened.png", "Regions.png", "Regions-detail.png", "Favorites-empty.png", "Favorites.png", "Favorites-opened.png"],
-        color: "#FFBEA2",
+        color: "#FFA6C5",
         link: "pokedex",
         site: "https://www.pokedex.malekguezouli.com",
         description: "This site is a drag-and-drop site that allows for text layout. It was supposed to be completed within 48 hours as a test, so it is not yet complete.",

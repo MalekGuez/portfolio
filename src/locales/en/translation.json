@@ -19,6 +19,7 @@
     "jun2021": "June.2021",
     "jul2022": "July.2022",
     "sep2024": "Sept.2024",
+    "jun2025": "Jun.2025",
     "dev": "Development",
     "dnd": "Design and Development",
     "nextBtn": "next project"
@@ -28,7 +29,7 @@
       "description": "Pokedex is a responsive web application focused on the Pokémon universe. It allows users to browse a complete Pokédex, organized by regions (from Kanto to Paldea), with detailed pages for each Pokémon. The interface is built for a clean and fast user experience, with generation-based navigation.",
       "dnd": "Designer and Developer",
       "theme": "Design and Development",
-      "jan2025": "June.2025",
+      "jun2025": "June.2025",
       "figmanextjs": "Figma, NextJS"
     },
     "dnd": {
