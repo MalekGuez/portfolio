@@ -41,7 +41,7 @@ export default function GradientBackground() {
       setInitialAnimationComplete(false);
     }
   }, [isActive, pathname]);
-
+  
   useEffect(() => {
     if (["/", "/about"].includes(pathname)) {
       setBgVisible(true);
@@ -55,35 +55,49 @@ export default function GradientBackground() {
   
 
   useEffect(() => {
-    if (interactive.current) {
-      let curX = 0;
-      let curY = 0;
-      let tgX = window.innerWidth / 2;
-      let tgY = window.innerHeight * (-1.1);
+    if (!interactive.current) return;
 
-      function onMouseMove(event) {
-        tgX = event.clientX;
-        tgY = event.clientY;
+    let curX = 0;
+    let curY = 0;
+    let tgX = window.innerWidth / 2;
+    let tgY = window.innerHeight * (-1.1);
+    let rafId = null;
+    let running = false;
+    const idleThreshold = 2;
+
+    function onMouseMove(event) {
+      tgX = event.clientX;
+      tgY = event.clientY;
+      if (!running) {
+        running = true;
+        move();
       }
-
-      function move() {
-        curX += (tgX - curX) / 20;
-        curY += (tgY - curY) / 20;
-        interactive.current.style.transform = `translate(${Math.round(
-          curX
-        )}px, ${Math.round(curY)}px)`;
-        requestAnimationFrame(() => {
-          move();
-        });
-      }
-
-      window.addEventListener("mousemove", onMouseMove);
-
-      move();
-      return () => {
-        window.removeEventListener("mousemove", onMouseMove);
-      };
     }
+
+    const roundTo = 5;
+    function move() {
+      if (!interactive.current) return;
+      curX += (tgX - curX) / 20;
+      curY += (tgY - curY) / 20;
+      const x = Math.round(curX / roundTo) * roundTo;
+      const y = Math.round(curY / roundTo) * roundTo;
+      interactive.current.style.transform = `translate(${x}px, ${y}px)`;
+      const idle = Math.abs(curX - tgX) < idleThreshold && Math.abs(curY - tgY) < idleThreshold;
+      if (idle) {
+        running = false;
+      } else {
+        rafId = requestAnimationFrame(move);
+      }
+    }
+
+    running = true;
+    rafId = requestAnimationFrame(move);
+
+    window.addEventListener("mousemove", onMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", onMouseMove);
+      if (rafId != null) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (

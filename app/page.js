@@ -15,7 +15,7 @@ export default function Home() {
     e.preventDefault();
     setIsLoading(true);
     setIsActive(false);
-    setTimeout(() => router.push(link, 400));
+    setTimeout(() => router.push(link), 400);
   }
 
   return (

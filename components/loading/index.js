@@ -1,5 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { useMenuContext } from "@/app/context/MenuContext";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./style.module.css";
@@ -7,22 +8,39 @@ import LoadingBar from "./bar";
 
 export default function Loading() {
   const { isLoading, setIsLoading, loadCount, setLoadCount } = useMenuContext();
+  const pathname = usePathname();
+  const prevPathnameRef = useRef(pathname);
+  const fallbackTimerRef = useRef(null);
 
   useEffect(() => {
     if (isLoading && loadCount === 0) {
       const timer = setTimeout(() => {
         setIsLoading(false);
       }, 2500);
-
-      return () => clearTimeout(timer);
-    } else {
-      const timer = setTimeout(() => {
-        setIsLoading(false);
-      }, 250);
-
       return () => clearTimeout(timer);
     }
-  }, [isLoading]);
+
+    if (isLoading && loadCount >= 1) {
+      fallbackTimerRef.current = setTimeout(() => setIsLoading(false), 500);
+      return () => {
+        if (fallbackTimerRef.current) {
+          clearTimeout(fallbackTimerRef.current);
+          fallbackTimerRef.current = null;
+        }
+      };
+    }
+  }, [isLoading, loadCount, setIsLoading]);
+
+  useEffect(() => {
+    if (prevPathnameRef.current !== pathname) {
+      prevPathnameRef.current = pathname;
+      if (fallbackTimerRef.current) {
+        clearTimeout(fallbackTimerRef.current);
+        fallbackTimerRef.current = null;
+      }
+      if (loadCount >= 1) setIsLoading(false);
+    }
+  }, [pathname, loadCount, setIsLoading]);
 
   const handleLoadComplete = () => {
     loadCount === 0 && setLoadCount(1);

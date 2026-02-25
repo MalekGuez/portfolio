@@ -9,14 +9,26 @@ export default function index({ modal, works }) {
   const sliderContainer = useRef(null);
 
   useEffect(() => {
-    const moveSliderContainerX = gsap.quickTo(sliderContainer.current, "left", {duration: .8, ease: "power3"});
-    const moveSliderContainerY = gsap.quickTo(sliderContainer.current, "top", {duration: .8, ease: "power3"});
+    if (!sliderContainer.current) return;
+    const moveSliderContainerX = gsap.quickTo(sliderContainer.current, "left", { duration: 0.8, ease: "power3" });
+    const moveSliderContainerY = gsap.quickTo(sliderContainer.current, "top", { duration: 0.8, ease: "power3" });
 
-    window.addEventListener("mousemove", (e) => {
-        const { clientX, clientY } = e;
-        moveSliderContainerX(clientX);
-        moveSliderContainerY(clientY);
-    });
+    let rafScheduled = false;
+    let lastX = 0;
+    let lastY = 0;
+    function onMouseMove(e) {
+      lastX = e.clientX;
+      lastY = e.clientY;
+      if (rafScheduled) return;
+      rafScheduled = true;
+      requestAnimationFrame(() => {
+        moveSliderContainerX(lastX);
+        moveSliderContainerY(lastY);
+        rafScheduled = false;
+      });
+    }
+    window.addEventListener("mousemove", onMouseMove);
+    return () => window.removeEventListener("mousemove", onMouseMove);
   }, []);
 
   return (

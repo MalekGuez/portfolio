@@ -8,14 +8,11 @@ export default function LoadingBar({ isLoading }) {
         <motion.div
           className={styles.progressBar}
           initial={{ width: "0%" }}
-          animate={{ width: "100%", opacity: 0}}
+          animate={{ width: "100%", opacity: 1 }}
+          exit={{ opacity: 0, transition: { duration: 0.15 } }}
           transition={{
-            duration: .25,
+            duration: 0.25,
             ease: "easeInOut",
-            opacity: {
-                duration: .2,
-                delay: .2
-            }
           }}
         />
       )}

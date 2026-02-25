@@ -90,7 +90,7 @@ export default function Header() {
             onClick={() => {
               setIsLoading(true);
               setIsActive(false);
-              pathname !== "/" && setTimeout(() => router.push("/"), 400);
+              if (pathname !== "/") setTimeout(() => router.push("/"), 400);
             }}
           />
           <motion.div
@@ -137,21 +137,10 @@ export default function Header() {
               },
             }}
             whileHover={{
-              rotate: [0, 5, -5, 5, -5, 0],
-              borderRadius: ["50%", "40%", "50%"],
-              scale: 1.2,
-              transition: {
-                duration: 1.2,
-                ease: "easeInOut",
-                times: [0, 0.2, 0.4, 0.6, 0.8, 1],
-                repeat: Infinity,
-                scale: {
-                  duration: 1.2,
-                  ease: "easeInOut",
-                  repeat: 0,
-                }
-              }
+              scale: 1.15,
+              transition: { duration: 0.2, ease: "easeOut" },
             }}
+            whileTap={{ scale: 0.95 }}
           />
           <Nav />
         </div>

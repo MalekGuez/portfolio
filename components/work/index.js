@@ -12,7 +12,7 @@ export default function index({ index, title, dateKey, themeKey, setModal, link 
   const { t } = useTranslation();
   const handleWorkClick = () => {
     setIsLoading(true);
-    setModal({active: false, index});
+    setModal({ active: false, index });
     setTimeout(() => router.push(`/works/${link}`), 400);
   };
 
