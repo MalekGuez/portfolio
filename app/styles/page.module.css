@@ -10,6 +10,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
+  margin-bottom: 87.5px; /* moitié du padding-top pour centrer le bloc visuellement */
 }
 
 .introContainer {
@@ -55,6 +56,9 @@
   .main {
     padding: 135px 60px 0 60px;
   }
+  .intro {
+    margin-bottom: 67.5px;
+  }
   .introContainer h1 {
     font-size: 78px;
     line-height: 80px;
@@ -63,6 +67,9 @@
 @media (max-width: 1024px) {
   .main {
     padding: 127px 40px 0 40px;
+  }
+  .intro {
+    margin-bottom: 63.5px;
   }
   .introContainer h1 {
     font-size: 64px;
@@ -77,6 +84,9 @@
   .main {
     padding: 111px 32px 0 32px;
   }
+  .intro {
+    margin-bottom: 55.5px;
+  }
   .introContainer h1 {
     font-size: 52px;
     line-height: 56px;
@@ -87,12 +97,14 @@
   .introContainer {
     gap: 16px;
   }
-  
 }
 
 @media (max-width: 425px) {
   .main {
     padding: 103px 24px 0 24px;
+  }
+  .intro {
+    margin-bottom: 51.5px;
   }
   .introContainer {
     gap: 12px;

@@ -36,3 +36,45 @@
     line-height: 22px;
     transition: .2s all linear;
 }
+
+@media (max-width: 1024px) {
+    .title {
+        font-size: 64px;
+        line-height: 64px;
+        margin-bottom: 10px;
+    }
+    .theme {
+        font-size: 20px;
+        line-height: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .work {
+        padding: 12px 0;
+    }
+    .title {
+        font-size: 48px;
+        line-height: 52px;
+        margin-bottom: 8px;
+    }
+    .theme {
+        font-size: 18px;
+        line-height: 18px;
+    }
+}
+
+@media (max-width: 425px) {
+    .work {
+        padding: 10px 0;
+    }
+    .title {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 6px;
+    }
+    .theme {
+        font-size: 16px;
+        line-height: 16px;
+    }
+}

@@ -113,3 +113,162 @@
 .navgiationInfo {
   font-family: "Inter", sans-serif;
 }
+
+/* Responsive */
+@media (max-width: 1440px) {
+  .workContainer {
+    padding: 160px 60px 0 60px;
+  }
+  .workDescription .descriptionTitle {
+    font-size: 64px;
+    line-height: 64px;
+  }
+  .workDescription .description {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .workDetail {
+    gap: 48px;
+  }
+  .workDetail .detailSpecs .specsTitle {
+    font-size: 22px;
+  }
+  .workDetail .detailSpecs .specsDesc {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .workContainer {
+    padding: 140px 40px 0 40px;
+  }
+  .workDescription {
+    margin-bottom: 40px;
+  }
+  .workDescription .descriptionTitle {
+    font-size: 52px;
+    line-height: 52px;
+    margin-bottom: 20px;
+  }
+  .workDescription .description {
+    font-size: 17px;
+    line-height: 26px;
+  }
+  .workDetail {
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 32px;
+  }
+  .workDetail .detailImages {
+    width: 100%;
+    order: 1;
+  }
+  .workDetail .detailSpecs {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 0;
+    order: 2;
+  }
+  .workDetail .specs {
+    min-width: 140px;
+  }
+  .workDetail .detailSpecs .specsTitle {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .workDetail .detailSpecs .specsDesc {
+    font-size: 15px;
+  }
+  .navigation {
+    padding: 32px 0;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .navigationInfo h3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .workContainer {
+    padding: 120px 32px 0 32px;
+  }
+  .workDescription {
+    margin-bottom: 32px;
+  }
+  .workDescription .descriptionTitle {
+    font-size: 40px;
+    line-height: 44px;
+    margin-bottom: 16px;
+  }
+  .workDescription .description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .workDetail {
+    gap: 32px;
+    padding-bottom: 24px;
+  }
+  .workDetail .detailImages {
+    gap: 24px;
+  }
+  .workDetail .detailSpecs {
+    gap: 20px;
+  }
+  .workDetail .detailSpecs .specsTitle {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .workDetail .detailSpecs .specsDesc {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .navigation {
+    padding: 24px 0;
+  }
+  .navigationInfo h3 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 425px) {
+  .workContainer {
+    padding: 100px 24px 0 24px;
+  }
+  .workDescription {
+    margin-bottom: 24px;
+  }
+  .workDescription .descriptionTitle {
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 12px;
+  }
+  .workDescription .description {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .workDetail {
+    gap: 24px;
+    padding-bottom: 20px;
+  }
+  .workDetail .detailImages {
+    gap: 20px;
+  }
+  .workDetail .detailSpecs {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .navigation {
+    padding: 20px 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navigationInfo {
+    text-align: left;
+  }
+  .navigationInfo h3 {
+    font-size: 16px;
+  }
+}

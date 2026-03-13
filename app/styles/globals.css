@@ -49,6 +49,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Mobile : dégradé discret, foncé puis plus clair sur les 20 % du bas */
+@media (max-width: 768px) {
+  body {
+    background: linear-gradient(
+      to bottom,
+      #0e002c 0%,
+      #0e002c 80%,
+      #1a0a3a 100%
+    );
+  }
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

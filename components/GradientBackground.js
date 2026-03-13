@@ -5,9 +5,36 @@ import styles from "../app/styles/GradientBackground.module.css";
 import { useMenuContext } from "@/app/context/MenuContext";
 import { usePathname } from "next/navigation";
 
+const MOBILE_BREAKPOINT = 768;
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
+    setIsMobile(mql.matches);
+    const handler = () => setIsMobile(mql.matches);
+    mql.addEventListener("change", handler);
+    return () => mql.removeEventListener("change", handler);
+  }, []);
+  return isMobile;
+}
+
+function useIsLowPerformance() {
+  const [isLow, setIsLow] = useState(false);
+  useEffect(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const cores = typeof navigator.hardwareConcurrency === "number" ? navigator.hardwareConcurrency : 8;
+    const lowMemory = typeof navigator.deviceMemory === "number" && navigator.deviceMemory <= 4;
+    setIsLow(reducedMotion || cores <= 4 || lowMemory);
+  }, []);
+  return isLow;
+}
+
 export default function GradientBackground() {
   const pathname = usePathname();
   const interactive = useRef(null);
+  const isMobile = useIsMobile();
+  const isLowPerformance = useIsLowPerformance();
 
   const [positions, setPositions] = useState([]);
   const targetPositionsRef = useRef([]);
@@ -20,6 +47,7 @@ export default function GradientBackground() {
   });
 
   useEffect(() => {
+    if (isMobile || isLowPerformance) return;
     const initialPositions = Array.from({ length: 5 }, generateRandomPosition);
     setPositions(initialPositions);
     targetPositionsRef.current = initialPositions;
@@ -34,13 +62,14 @@ export default function GradientBackground() {
     }, 5900);
     
     return () => clearInterval(intervalId);
-  }, [isActive, initialAnimationComplete]);
+  }, [isMobile, isLowPerformance, isActive, initialAnimationComplete]);
 
   useEffect(() => {
+    if (isMobile || isLowPerformance) return;
     if (isActive || ["/", "/about"].includes(pathname)) {
       setInitialAnimationComplete(false);
     }
-  }, [isActive, pathname]);
+  }, [isMobile, isLowPerformance, isActive, pathname]);
   
   useEffect(() => {
     if (["/", "/about"].includes(pathname)) {
@@ -55,7 +84,7 @@ export default function GradientBackground() {
   
 
   useEffect(() => {
-    if (!interactive.current) return;
+    if (isMobile || isLowPerformance || !interactive.current) return;
 
     let curX = 0;
     let curY = 0;
@@ -98,7 +127,9 @@ export default function GradientBackground() {
       window.removeEventListener("mousemove", onMouseMove);
       if (rafId != null) cancelAnimationFrame(rafId);
     };
-  }, []);
+  }, [isMobile, isLowPerformance]);
+
+  if (isMobile || isLowPerformance) return null;
 
   return (
     <div className={styles.gradient}>

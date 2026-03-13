@@ -1,7 +1,7 @@
 .works {
     padding-top: 16px;
     padding-bottom: 160px;
-    overflow-y: scroll; 
+    overflow-y: scroll;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -20,9 +20,58 @@
     text-transform: uppercase;
     font-family: "Heatrix", sans-serif;
     text-align: right;
-    
+
     padding-bottom: 16px;
 
     border-bottom: 3px solid #3500AD;
+}
+
+@media (max-width: 1440px) {
+    .worksTitle {
+        font-size: 78px;
+        line-height: 78px;
+        margin-top: 32px;
+    }
+    .works {
+        padding-bottom: 120px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .worksTitle {
+        font-size: 64px;
+        line-height: 68px;
+        margin-top: 24px;
+        padding-bottom: 12px;
+    }
+    .works {
+        padding-top: 12px;
+        padding-bottom: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .worksTitle {
+        font-size: 52px;
+        line-height: 56px;
+        margin-top: 16px;
+        padding-bottom: 12px;
+    }
+    .works {
+        padding-top: 8px;
+        padding-bottom: 80px;
+    }
+}
+
+@media (max-width: 425px) {
+    .worksTitle {
+        font-size: 40px;
+        line-height: 44px;
+        margin-top: 12px;
+        padding-bottom: 8px;
+    }
+    .works {
+        padding-bottom: 60px;
+    }
 }
 
