@@ -130,10 +130,13 @@ export default function WorkDetailPage({ params }) {
                         className={styles.image}
                         key={index}
                         src={`/static/images/works/${work.link}/images/${image}`}
-                        alt="Work images"
-                        width={1000}
-                        height={0}
-                        unoptimized 
+                        alt={`${work.title} – screen ${index + 1}`}
+                        width={1600}
+                        height={900}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 75vw"
+                        quality={85}
+                        priority={index === 0}
+                        loading={index === 0 ? "eager" : "lazy"}
                       />
                     );
                   })}
